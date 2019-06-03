@@ -39,4 +39,8 @@ dependencies {
 
     // BASE
     implementation project(':base')
+    implementation project(':app_common')
+
+    // SCREENS
+    implementation project(':app_home')
 }

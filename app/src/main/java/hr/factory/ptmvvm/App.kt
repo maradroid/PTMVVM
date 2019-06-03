@@ -1,5 +1,6 @@
 package hr.factory.ptmvvm
 
+import hr.factory.app_home.common.di.homeModule
 import hr.factory.base.BaseApp
 import hr.factory.base.dependency_injection.appModule
 import hr.factory.base.dependency_injection.serviceModule
@@ -16,7 +17,8 @@ class App: BaseApp() {
             modules(
                 routerModule,
                 appModule,
-                serviceModule)
+                serviceModule,
+                homeModule)
         }
     }
 }
