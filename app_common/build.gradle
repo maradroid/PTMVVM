@@ -1,0 +1,25 @@
+import dependencies.versions
+import dependencies.plugin
+import dependencies.deps
+
+apply plugin: 'com.android.feature'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation plugin.kotlin.runtime
+    implementation deps.support.appCompat
+    implementation deps.support.constraintLayout
+    implementation deps.support.material
+}

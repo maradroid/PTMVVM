@@ -1,0 +1,42 @@
+import dependencies.plugin
+import dependencies.versions
+import dependencies.deps
+import dependencies.config
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "hr.factory.ptmvvm"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode config.versionCode
+        versionName config.versionName
+        testInstrumentationRunner config.testRunner
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // DEPENDENCIES
+    implementation plugin.kotlin.runtime
+    implementation deps.support.appCompat
+
+    // BASE
+    implementation project(':base')
+}

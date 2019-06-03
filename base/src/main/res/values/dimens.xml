@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="page_transformer_margin">23dp</dimen>
+    <dimen name="page_transformer_padding_left">58dp</dimen>
+    <dimen name="page_transformer_padding_top">0dp</dimen>
+    <dimen name="page_transformer_padding_rignt">58dp</dimen>
+    <dimen name="page_transformer_padding_bottom">0dp</dimen>
+</resources>

@@ -1,0 +1,53 @@
+import dependencies.versions
+import dependencies.plugin
+import dependencies.deps
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // KOTLIN
+    implementation plugin.kotlin.runtime
+    api deps.ktx
+    // APP
+    implementation deps.support.appCompat
+    api deps.support.constraintLayout
+    api deps.support.material
+    api deps.support.livedata
+    // KOIN
+    api deps.koin.android
+    api deps.koin.viewModel
+    // RX
+    api deps.rx.kotlin
+    api deps.rx.android
+    api deps.rx.relay
+    api deps.rx.binding
+    // NETWORKING
+    api deps.retrofit.retrofit
+    api deps.retrofit.rxJavaAdapter
+    api deps.retrofit.converterGson
+    api deps.retrofit.loggingInterceptor
+    //customtabs
+    api deps.customTabs
+    // EPOXY
+    api deps.epoxy.dep
+}
+repositories {
+    mavenCentral()
+}
